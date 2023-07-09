@@ -1,7 +1,9 @@
 import React from 'react'
 import { useLocation,useNavigate } from 'react-router-dom'
-import Uduak from '../uduak.png'
+import logo from '../assest/img/logo.png'
+
 import Hamburger from './Hamburger';
+
 
 export default function Navbar() {
   const location = useLocation();
@@ -11,13 +13,13 @@ export default function Navbar() {
     if (route === location.pathname ) {
       return true
     }
-    
   }
+
   return (
-    <header className=' flex items-center bg-gray-800 sticky top-0 md:h-20 h-15'>
+    <header className=' flex items-center bg-gray-950  shadow-md  shadow-gray-950 sticky top-0 md:h-20 h-14'>
       <nav className='container mx-auto flex items-center justify-between px-10  '>
         <div className=''>
-          <img className=' w-10 md:w-20 cursor-pointer ' onClick={() => navigate("/")} src={Uduak} alt="" />
+          <img className=' w-20 md:w-40 cursor-pointer ' onClick={() => navigate("/")} src={logo} alt="" />
         </div>
         <div className='block md:hidden '>
             <Hamburger/>
