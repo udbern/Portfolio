@@ -28,7 +28,7 @@ export default function Navbar() {
           <ul className='flex space-x-5 text-white text-xl font-serif  '>
             <li className={`cursor-pointer font-semi-bold  border-b-2 border-b-transparent  transition-all duration-500 hover:text-slate-400 ${samePath("/") && "text-white !border-b-slate-100 "}`} onClick={() => navigate("/")}>Home</li>
             <li className={`cursor-pointer font-semi-bold  border-b-2 border-b-transparent  transition-all duration-500 hover:text-slate-400 ${samePath("/Blog") && "text-white !border-b-slate-100"}`} onClick={() => navigate("/Blog")}>Blog</li>
-            <li className={`cursor-pointer font-semi-bold  border-b-2 border-b-transparent  transition-all duration-500hover:text-slate-400 ${samePath("/Project") && "text-white !border-b-slate-100"}`} onClick={() => navigate("/Project")} >Projects</li>
+            <li className={`cursor-pointer font-semi-bold  border-b-2 border-b-transparent  transition-all duration-500 hover:text-slate-400 ${samePath("/Project") && "text-white !border-b-slate-100"}`} onClick={() => navigate("/Project")} >Projects</li>
             <li className={`cursor-pointer font-semi-bold  border-b-2 border-b-transparent transition-all duration-500   hover:text-slate-400  ${samePath("/Contact") && "text-white !border-b-slate-100  hover:border-b-slate-400"} `} onClick={() => navigate("/Contact")}>Contact</li>
           </ul>
         </div>

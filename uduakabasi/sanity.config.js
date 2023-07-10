@@ -7,7 +7,7 @@ export default defineConfig({
   name: 'default',
   title: 'UduakAbasi',
 
-  projectId: 't1vh1y0s',
+  projectId: '50m6rs35',
   dataset: 'production',
 
   plugins: [deskTool(), visionTool()],

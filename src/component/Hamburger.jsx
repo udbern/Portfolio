@@ -30,12 +30,12 @@ export default function Hamburger() {
         <div className='relative'>
               <HiMenu className=' text-2xl  text-white  hover:border' onClick={handleMenuOpen} />     
         </div>
-          {isMenuOpen && <div className='  absolute bg-black right-0  top-0 w-[70%]  h-screen  p-10  '>
+          {isMenuOpen && <div className='  absolute bg-gray-950 right-0  top-0 w-[70%]  h-screen  p-10  '>
               <AiOutlineClose className=' text-2xl  text-white  hover:border' onClick={handleMenuClose} /> 
               <ul className='block space-y-5  text-white text-xl font-serif mt-10  '>
                   <li className={`cursor-pointer font-semi-bold  border-b-2 border-b-transparent  transition-all duration-500 hover:text-slate-400 ${samePath("/") && "text-white !border-b-slate-100 "}`} onClick={() => navigate("/")}>Home</li>
                   <li className={`cursor-pointer font-semi-bold  border-b-2 border-b-transparent  transition-all duration-500 hover:text-slate-400 ${samePath("/Blog") && "text-white !border-b-slate-100"}`} onClick={() => navigate("/Blog")}>Blog</li>
-                  <li className={`cursor-pointer font-semi-bold  border-b-2 border-b-transparent  transition-all duration-500hover:text-slate-400 ${samePath("/Project") && "text-white !border-b-slate-100"}`} onClick={() => navigate("/Project")} >Projects</li>
+                  <li className={`cursor-pointer font-semi-bold  border-b-2 border-b-transparent  transition-all duration-500 hover:text-slate-400 ${samePath("/Project") && "text-white !border-b-slate-100"}`} onClick={() => navigate("/Project")} >Projects</li>
                   <li className={`cursor-pointer font-semi-bold  border-b-2 border-b-transparent transition-all duration-500   hover:text-slate-400  ${samePath("/Contact") && "text-white !border-b-slate-100  hover:border-b-slate-400"} `} onClick={() => navigate("/Contact")}>Contact</li>
               </ul>
               <ul className='text-white block space-y-5 mt-10'>
