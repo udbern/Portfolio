@@ -10,11 +10,7 @@ import uduak from '../uduak.png'
 export default function Footer() {
   return (
     <>
-<<<<<<< HEAD
-      <footer className='  bg-slate-950  w-full mt-5 px-5   '>
-=======
       <footer className=' bg-slate-950  w-full mt-5 px-5   '>
->>>>>>> 7135f6547e60269de1564d78e84b138f13e445f7
         <div className='flex  max-w-6xl mx-auto   items-center justify-between  md:h-20    '>
         <div>
           <img className='w-10' src={uduak} alt="footer.png" />
