@@ -16,14 +16,13 @@ export default function Project() {
         mainImage {
           asset -> {
             _id,
-            url,
+            url
           },
-          alt,
+          alt
         },
         github,
-        live,
-        
-      })`
+        live
+      }`
       )
       .then((data) => {
         setProjectData(data);
@@ -33,7 +32,7 @@ export default function Project() {
 
   return (
     <>
-      <section>
+      <section className='min-h-[100vh]'>
         <h1 className='text-center font-semibold text-3xl mt-10'>My projects</h1>
         <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto px-5 mt-10'>
           {projectData ? (
@@ -61,7 +60,7 @@ export default function Project() {
               </div>
             ))
           ) : (
-            <p className=' text-4xl font-semibold flex justify-center items-center'>Loading project data...</p>
+            <p className=' text-4xl  border  text-center  '>Loading data...</p>
           )}
         </div>
       </section>

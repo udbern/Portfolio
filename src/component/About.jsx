@@ -1,5 +1,4 @@
-import React from 'react'
-import  Uduakabasi   from '../assest/img/me.png'
+import React, { useState, useEffect } from 'react'
 import { HiDownload } from 'react-icons/hi';
 import { Link } from 'react-router-dom';
 import { AiFillTwitterSquare } from 'react-icons/ai';
@@ -13,13 +12,35 @@ import { BiLogoSass } from 'react-icons/bi';
 import { SiTailwindcss } from 'react-icons/si';
 import { RiJavascriptFill } from 'react-icons/ri';
 import { LiaReact } from 'react-icons/lia';
+import { client } from "../lib/client";
 
 
 
 export default function About() {
+  const [authorData, setAuthorData] = useState(null);
+
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "author"] {
+        image {
+          asset -> {
+            _id,
+            url
+          }
+        },
+        bio
+      }`)
+      .then((data) => {
+        setAuthorData(data[0]); 
+      })
+      .catch(console.error);
+  }, []);
+
+
+
   return (
     <>
-    <main className=' mt-10 md:mt-28 '>
+      <main className=' mt-10 md:mt-28  min-h-[100vh] '>
         <div className='max-w-4xl   mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-10 '>
           <div className=' flex gap-0 '>
             <div className=' hidden md:flex ml-4 md:ml-0 md:mr-4  h-full    '>
@@ -41,17 +62,24 @@ export default function About() {
                 </Link>
               </ul>
             </div> 
-            <div className='h-96 w-96 flex max-w-4xl mx-auto  md:mx-0 rounded-lg overflow-hidden shadow-lg shadow-gray-950   '>
-              <img className='object-center object-cover  w-full h-full ' src={Uduakabasi} alt="Uduakabsi.png" />
-
+            <div className='h-96 w-96 flex max-w-4xl mx-auto md:mx-0 rounded-lg overflow-hidden shadow-lg shadow-gray-950 bg-gray-950 p-5 '>
+              {authorData && (
+                <img
+                  className='object-center object-cover w-full h-full'
+                  src={authorData.image.asset.url}
+                  alt='Author Image'
+                />
+              )}
             </div>
           </div>
           
           <div className='mx-5'>
-            <h1 className=' text-center  md:text-left font-serif  '>
-               My name is UduakAbasi Bernard Edwin, A Front-End Developer/Designer with a proven ability to deliver on any given task and to collaborate effectively with other developers. I enjoy working closely with team members to ensure workloads are effectively redirected, and I pick up the slack when necessary with a passion for personal growth and software development. 
+            <h1 className='text-center md:text-left font-serif'>
+              {authorData && authorData.bio.map((block) => (
+                <p key={block._key}>{block.children.map((child) => child.text).join('')}</p>
+              ))}
             </h1>
-            <button className='flex items-center gap-2 mt-3 justify-center  max-w-4xl mx-auto md:mx-0  border  py-2 px-3 bg-slate-950 text-white hover:bg-slate-800  transition-all duration-300  rounded-lg   overflow-hidden '>Download CV <span><HiDownload/></span></button>
+            <button className='flex items-center gap-2 mt-3 justify-center  max-w-4xl mx-auto md:mx-0  border  py-2 px-3 bg-slate-950 text-white hover:bg-slate-800  transition-all duration-300  rounded-lg   overflow-hidden ' onClick={() =>alert('coming soon ')}>Download CV <span><HiDownload/></span></button>
             
             <div className='mt-3 md:block  hidden   '>
               <h3 className='capitalize font-semi-bold text-2xl pb-2 text-center md:text-left '> my stack</h3>

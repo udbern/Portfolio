@@ -16,7 +16,7 @@ export default function Navbar() {
   }
 
   return (
-    <header className=' flex items-center bg-gray-950  shadow-md  shadow-gray-950 sticky top-0 md:h-20 h-14'>
+    <header className=' flex items-center bg-gray-950  shadow-md  shadow-gray-950 sticky top-0 md:h-20 h-14 z-50'>
       <nav className='container mx-auto flex items-center justify-between px-10  '>
         <div className=''>
           <img className=' w-20 md:w-40 cursor-pointer ' onClick={() => navigate("/")} src={logo} alt="" />
