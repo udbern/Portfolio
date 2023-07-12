@@ -22,18 +22,13 @@ export default defineType({
             },
          }),
 
-        defineField({
-            name: 'description',
-            title: 'Description',
-            type: 'text',
-        }), 
-    
 
         defineField({
             name: 'github',
             type: 'url',
             
         }),
+
         defineField({
             name: 'live',
             type: 'url',

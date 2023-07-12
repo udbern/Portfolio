@@ -15,8 +15,7 @@ export default function Blogpost() {
             title,
             slug,
             body[] {
-              ...,
-              // Define any additional fields you need from the block content
+              
             },
             publishedAt,
             mainImage {

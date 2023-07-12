@@ -12,7 +12,6 @@ export default function Project() {
         `*[_type == "project"] {
         _id,
         title,
-        description,
         mainImage {
           asset -> {
             _id,
@@ -47,12 +46,11 @@ export default function Project() {
                 </div>
                 <div className='px-5'>
                   <h1 className=' pt-2 capitalize font-semibold'>{project.title}</h1>
-                  <p className='font-normal text-[14px] pt-1'>{project.description}</p>
-                  <div className='flex  space-x-5 items-center pb-2'>
-                    <a className='flex space-x-1 items-center' href={project.github}>
+                  <div className='flex justify-between items-center pt-5 pb-2'>
+                    <a className='flex space-x-1 items-center  bg-gray-950 text-white px-4 rounded py-1 hover:bg-slate-800' href={project.github}>
                       <h2 className='capitalize'>Github</h2><span><AiFillGithub className='text-2xl' /></span>
                     </a>
-                    <a className='flex space-x-1 items-center' href={project.live}>
+                    <a className='flex space-x-1 items-center bg-gray-950 text-white px-4 rounded py-1 hover:bg-slate-800' href={project.live}>
                       <h2 className='capitalize'>Live</h2><span><LuExternalLink className='text-2xl' /></span>
                     </a>
                   </div>

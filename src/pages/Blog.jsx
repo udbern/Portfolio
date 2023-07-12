@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { client } from '../lib/client';
-import uduakabasi from '../uduak.png';
 
 export default function Blog() {
   const [stories, setStories] = useState([]);
@@ -61,8 +60,8 @@ export default function Blog() {
                     />
                   )}
                 </div>
-                <div className='p-2 '>
-                  <div className='flex items-end space-x-2 '> 
+                <div className='p-3 '>
+                  <div className='flex items-end justify-between '> 
                     {story.author.image && (
                       <img
                         className='w-10 h-10 rounded-full'
@@ -70,14 +69,12 @@ export default function Blog() {
                         alt={story.author.image.alt}
                       />
                     )}
-                    <h1 className='capitalize text-[10px] text-xl '>{story.author.name}  <span>{new Date(story.publishedAt).toLocaleDateString()}</span></h1>
+                    <span className='text-[15px] md:text-xl'>{new Date(story.publishedAt).toLocaleDateString()}</span>
                   </div>
-                  
-                  
-                  <h2 className='capitalize text-sm font-semibold'>{story.title}</h2>
+                  <h2 className='capitalize text-sm font-semibold pt-2 '>{story.title}</h2>
                   <p className='pb-1 text-[12px] md:text-xl font-normal'>{`${story.body[0].children[0].text.substring(0, 40)}...`}</p>
                   <Link to={`/blog/${story.slug.current}`}>
-                    <h2 className=' w-fit  text-[12px] md:text-xl border py-2 px-3 bg-slate-950 text-white hover:bg-slate-800  transition-all duration-300  rounded-lg   overflow-hidden '>Read More</h2>
+                    <h2 className=' w-fit  text-[12px] md:text-xl border py-1 px-3 bg-slate-950 text-white hover:bg-slate-800  transition-all duration-300  rounded-lg   overflow-hidden '>Read More</h2>
                   </Link>
                 </div>
               </div>
