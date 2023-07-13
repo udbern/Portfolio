@@ -23,7 +23,7 @@ export default function Contact() {
   };
 
   return (
-    <div>
+    <div className='mx-4 min-h-[100vh]'>
       <form ref={form} onSubmit={sendEmail} className="max-w-md mx-auto mt-24">
         <div className="mb-4">
           <label className="text-gray-800 block mb-1" htmlFor="name">

@@ -35,7 +35,7 @@ export default function Hamburger() {
                                 }`}
                             onClick={() => {
                                 navigate('/');
-                                handleMenuClose(); // Close menu after clicking
+                                handleMenuClose(); 
                             }}
                         >
                             Home
@@ -45,7 +45,7 @@ export default function Hamburger() {
                                 }`}
                             onClick={() => {
                                 navigate('/Blog');
-                                handleMenuClose(); // Close menu after clicking
+                                handleMenuClose(); 
                             }}
                         >
                             Blog
@@ -55,7 +55,7 @@ export default function Hamburger() {
                                 }`}
                             onClick={() => {
                                 navigate('/Project');
-                                handleMenuClose(); // Close menu after clicking
+                                handleMenuClose(); 
                             }}
                         >
                             Projects
@@ -65,7 +65,7 @@ export default function Hamburger() {
                                 }`}
                             onClick={() => {
                                 navigate('/Contact');
-                                handleMenuClose(); // Close menu after clicking
+                                handleMenuClose(); 
                             }}
                         >
                             Contact

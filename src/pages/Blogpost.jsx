@@ -14,14 +14,12 @@ export default function Blogpost() {
           `*[slug.current == "${slug}"] {
             title,
             slug,
-            body[] {
-              
-            },
+            body,
             publishedAt,
             mainImage {
               asset -> {
                 _id,
-                url
+                url,
               },
               alt
             },
@@ -53,11 +51,14 @@ export default function Blogpost() {
             <img
               src={blogpost.mainImage.asset.url}
               alt={blogpost.mainImage.alt}
-              className="h-96 w-full object-cover rounded-2xl shadow"
+              className=" md:h-96 w-full object-cover rounded-2xl shadow"
             />
           )}
-          <h1 className="text-2xl my-8 lg:text-4xl font-bold">{blogpost.title}</h1>
-          <PortableText value={blogpost.body} />
+          <h1 className="text-2xl my-4 lg:text-4xl font-bold">{blogpost.title}</h1>
+          <div className=" text-xl md:text-2xl text-justify font-gray-800">
+            <PortableText value={blogpost.body} />
+          </div>
+          
           <div className="max-w-7xl mx-auto px-5 mb-20 mt-10 flex items-end justify-end">
             <Link
               to="/blog"

@@ -58,7 +58,9 @@ export default function Project() {
               </div>
             ))
           ) : (
-            <p className=' text-4xl  border  text-center  '>Loading data...</p>
+            <div className='flex justify-center items-center'>
+                <p className=' md:text-4xl'>Loading data...</p>
+            </div>
           )}
         </div>
       </section>

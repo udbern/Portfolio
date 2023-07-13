@@ -6,13 +6,14 @@ import { FaSquareGithub } from 'react-icons/fa6';
 import { AiFillFacebook } from 'react-icons/ai';
 import { FaSquareInstagram } from 'react-icons/fa6';
 import { FaWhatsappSquare } from 'react-icons/fa';
-import { AiFillHtml5 } from 'react-icons/ai';
-import { IoLogoCss3 } from 'react-icons/io';
-import { BiLogoSass } from 'react-icons/bi';
-import { SiTailwindcss } from 'react-icons/si';
-import { RiJavascriptFill } from 'react-icons/ri';
-import { LiaReact } from 'react-icons/lia';
 import { client } from "../lib/client";
+import Css from "../assest/img/Css.png";
+import Html from "../assest/img/Html.png";
+import Javascript from "../assest/img/Javascript.png";
+import Reacts from "../assest/img/Reacts.png";
+import Tailwind from "../assest/img/Tailwind.png";
+import Sass from "../assest/img/Sass.png";
+import { motion } from "framer-motion";
 
 
 
@@ -74,29 +75,33 @@ export default function About() {
           </div>
           
           <div className='mx-5'>
-            <h1 className='text-center md:text-left font-serif'>
+            <motion.h1 className='text-center md:text-left font-serif'
+              initial={{ x: 300 }}
+              animate={{ x: 0 }}
+            >
+              
               {authorData && authorData.bio.map((block) => (
                 <p key={block._key}>{block.children.map((child) => child.text).join('')}</p>
               ))}
-            </h1>
-            <button className='flex items-center gap-2 mt-3 justify-center  max-w-4xl mx-auto md:mx-0  border  py-2 px-3 bg-slate-950 text-white hover:bg-slate-800  transition-all duration-300  rounded-lg   overflow-hidden ' onClick={() =>alert('coming soon ')}>Download CV <span><HiDownload/></span></button>
+            </motion.h1>
+            <button className='flex items-center gap-2 mt-3 justify-center  max-w-4xl mx-auto md:mx-0  border  py-2 px-3 bg-slate-950 text-white hover:bg-slate-800  transition-all duration-300  rounded-lg   overflow-hidden' onClick={() =>alert('coming soon ')}>Download CV <span><HiDownload/></span></button>
             
             <div className='mt-3 md:block  hidden   '>
               <h3 className='capitalize font-semi-bold text-2xl pb-2 text-center md:text-left '> my stack</h3>
               <div className='flex justify-center md:justify-start '>
                 <ul className='flex items-center space-x-4 text-3xl '>
                   
-                  <AiFillHtml5 className='text-[#E65100] border-2 border-black  bg-gray-200 rounded overflow-hidden' />
+                  <img className=' h-12  border-2 border-black  rounded overflow-hidden' src={Css} alt="" />
                   
-                  <IoLogoCss3 className=' text-[#0277BD] border-2 bg-gray-200 border-black rounded overflow-hidden' />
+                  <img className=' h-12  border-2 border-black  rounded overflow-hidden' src={Html} alt="" />
           
-                  < BiLogoSass className=' text-[#F06292] border-2 bg-gray-200 border-black rounded overflow-hidden ' />
+                  <img className=' h-12  border-2 border-black  rounded overflow-hidden' src={Javascript} alt="" />
                   
-                  < SiTailwindcss className='text-[#00ACC1] bg-gray-200 border-2 border-black rounded overflow-hidden' />
+                  <img className=' h-12 border-2 border-black  rounded overflow-hidden' src={Reacts} alt="" />
   
-                  < RiJavascriptFill className='text-[#c46c08fd] bg-gray-200 border-2 border-black rounded overflow-hidden' />
+                  <img className=' h-12  border-2 border-black  rounded overflow-hidden' src={Sass} alt="" />
 
-                  < LiaReact className='text-[#80DEEA] border-2 bg-gray-200 border-black rounded overflow-hidden ' />
+                  <img className=' h-12  border-2 border-black  rounded overflow-hidden' src={Tailwind} alt="" />
                 </ul>
               </div>
               
