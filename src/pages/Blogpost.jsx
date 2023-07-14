@@ -52,7 +52,7 @@ export default function Blogpost() {
               src={blogpost.mainImage.asset.url}
               alt={blogpost.mainImage.alt}
               className=" md:h-96 w-full object-cover rounded-2xl shadow"
-            />
+              loading="lazy"/>
           )}
           <h1 className="text-2xl my-4 lg:text-4xl font-bold">{blogpost.title}</h1>
           <div className=" text-xl md:text-2xl text-justify font-gray-800">
@@ -62,7 +62,7 @@ export default function Blogpost() {
           <div className="max-w-7xl mx-auto px-5 mb-20 mt-10 flex items-end justify-end">
             <Link
               to="/blog"
-              className=" bg-slate-950 text-white hover:bg-slate-800  py-2 px-4  rounded-lg   overflow-hidden tracking-wide hover:opacity-75 transition-all duration-200"
+              className=" bg-slate-700 text-white hover:bg-slate-800  py-2 px-4  rounded-lg   overflow-hidden tracking-wide hover:opacity-75 transition-all duration-200"
             >
               Read More Blog posts
             </Link>

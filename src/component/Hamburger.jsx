@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { HiMenu } from 'react-icons/hi';
 import { AiOutlineClose } from 'react-icons/ai';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 
 export default function Hamburger() {
     const navigate = useNavigate();

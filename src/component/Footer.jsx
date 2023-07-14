@@ -8,15 +8,23 @@ import { FaWhatsappSquare } from 'react-icons/fa';
 import uduak from '../uduak.png'
 
 export default function Footer() {
+
+  const getCurrentYear = () => {
+    return new Date().getFullYear();
+  };
+
   return (
     <>
-      <footer className=' bg-gray-950 w-full mt-5 px-5  min-[calc(100vh - 34px)]:  '>
+      <footer className=' bg-gray-950 w-full pt-5 px-5  min-[calc(100vh - 34px)]:  '>
         <div className='flex  max-w-6xl mx-auto   items-center justify-between  md:h-20    '>
-        <div>
-          <img className='w-10' src={uduak} alt="footer.png" />
-        </div>
+          <Link to={"/"}>
+            <div className='border '>
+              <img className='w-10' src={uduak} alt="footer.png" loading="lazy" />
+            </div>
+          </Link>
+        
         <div className=' hidden md:flex '>
-            <h2 className='text-white '>@copyrightuduakabasibernardedwin</h2>
+            <p className='text-white'>&copy; {getCurrentYear()} UduakAbasi Bernard</p>
         </div>
         <div>
             <ul className='flex items-center space-x-4 text-2xl '>
@@ -32,7 +40,7 @@ export default function Footer() {
               <Link to="">
                 < FaSquareInstagram className='text-[#D81B60]' />
               </Link >
-              <Link to="https://api.whatsapp.com/send?phone=55+2349012675989&text=Hello" >
+              <Link to="https://wa.me/2349012675868" >
                 < FaWhatsappSquare className='text-[#40C351]' />
               </Link>
             </ul>
