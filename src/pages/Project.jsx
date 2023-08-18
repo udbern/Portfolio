@@ -9,7 +9,7 @@ export default function Project() {
   useEffect(() => {
     client
       .fetch(
-        `*[_type == "project"] {
+        `*[_type == "project"] | order(_createdAt desc) {
         _id,
         title,
         mainImage {
@@ -21,7 +21,7 @@ export default function Project() {
         },
         github,
         live
-      } | order(desc)`
+      }  `
       )
       .then((data) => {
         setProjectData(data);
