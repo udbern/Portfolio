@@ -107,7 +107,7 @@ export default function About() {
               />
             </div>
             
-            <div className='mt-3    '>
+            <div className='mt-3  mb-5   '>
               <h3 className='capitalize font-semi-bold text-2xl pb-2 text-center md:text-left '> my stack</h3>
               <div className='flex justify-center md:justify-start '>
                 <motion.ul className='flex items-center space-x-4 text-3xl'

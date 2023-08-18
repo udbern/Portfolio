@@ -33,7 +33,7 @@ export default function Contact() {
             type="text"
             name="user_name"
             required
-            className="border border-gray-700 dark:text-gray-100 px-3 py-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="border border-gray-700 dark:text-gray-600 px-3 py-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-gray-500"
           />
         </div>
         <div className="mb-4">
@@ -44,7 +44,7 @@ export default function Contact() {
             type="email"
             name="user_email"
             required
-            className="border border-gray-700 px-3 py-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="border border-gray-700 px-3 py-2 rounded-md w-full focus:outline-none focus:ring-2 focus:ring-gray-500 dark:text-gray-600"
           />
         </div>
         <div className="mb-4">
@@ -54,7 +54,7 @@ export default function Contact() {
           <textarea
             name="message"
             required
-            className="border border-gray-700 px-3 py-2 rounded-md w-full h-32 resize-none focus:outline-none focus:ring-2 focus:ring-gray-500"
+            className="border border-gray-700 px-3 py-2 rounded-md w-full h-32 resize-none focus:outline-none focus:ring-2 focus:ring-gray-500 dark:text-gray-600"
           />
         </div>
         <button

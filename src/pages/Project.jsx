@@ -21,7 +21,7 @@ export default function Project() {
         },
         github,
         live
-      }`
+      } | order(desc)`
       )
       .then((data) => {
         setProjectData(data);

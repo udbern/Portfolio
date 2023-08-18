@@ -15,10 +15,10 @@ export default function Footer() {
 
   return (
     <>
-      <footer className=' bg-gray-950 w-full pt-5 px-5  min-[calc(100vh - 34px)]:  '>
-        <div className='flex  max-w-6xl mx-auto   items-center justify-between  md:h-20    '>
+      <footer className=' bg-gray-950 w-full  p-2 px-5  min-[calc(100vh - 34px)]:  '>
+        <div className='flex  max-w-6xl mx-auto   items-center justify-between  md:h-20   '>
           <Link to={"/"}>
-            <div className='border '>
+            <div className='border border-gray-500 rounded '>
               <img className='w-10' src={uduak} alt="footer.png" loading="lazy" />
             </div>
           </Link>

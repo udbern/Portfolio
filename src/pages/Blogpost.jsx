@@ -55,7 +55,7 @@ export default function Blogpost() {
               loading="lazy"/>
           )}
           <h1 className="text-2xl my-4 lg:text-4xl font-bold">{blogpost.title}</h1>
-          <div className=" text-xl md:text-2xl text-justify font-gray-800">
+          <div className=" text-xl md:text-2xl text-justify font-gray-800 max-w-3xl mx-auto">
             <PortableText value={blogpost.body} />
           </div>
           
