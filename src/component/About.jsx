@@ -70,7 +70,7 @@ export default function About() {
                 </Link>
               </ul>
             </div> 
-            <div className='h-96 w-96 flex max-w-4xl mx-auto md:mx-0 rounded-lg overflow-hidden shadow-lg shadow-gray-950 bg-gray-700 p-5 dark:shadow-gray-300 '>
+            <div className='h-96 w-96 flex max-w-4xl mx-auto md:mx-0 rounded-lg overflow-hidden shadow-lg shadow-gray-950 bg-gray-700 p-2 dark:shadow-gray-300 '>
               {authorData && (
                 <img
                   className='object-center object-cover w-full h-full'
