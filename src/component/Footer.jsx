@@ -1,4 +1,4 @@
-import React from 'react'
+ import React from 'react'
 import { Link } from 'react-router-dom';
 import { AiFillTwitterSquare } from 'react-icons/ai';
 import { FaSquareGithub } from 'react-icons/fa6';
@@ -24,7 +24,7 @@ export default function Footer() {
           </Link>
         
         <div className=' hidden md:flex '>
-            <p className='text-white'>&copy; {getCurrentYear()} UduakAbasi Bernard</p>
+            <p className='text-white'>&copy; {getCurrentYear()} UduakAbasi Bernard Edwin</p>
         </div>
         <div>
             <ul className='flex items-center space-x-4 text-2xl '>
@@ -37,7 +37,7 @@ export default function Footer() {
               <Link to="https://github.com/udbern">
                 < FaSquareGithub className=' text-[#333]' />
               </Link>
-              <Link to="">
+              <Link to="https://instagram.com/ub_edwin">
                 < FaSquareInstagram className='text-[#D81B60]' />
               </Link >
               <Link to="https://wa.me/2349012675868" >

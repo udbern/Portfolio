@@ -16,9 +16,13 @@ import Sass from "../assest/img/Sass.png";
 import { motion, animate, stagger } from "framer-motion";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import imageUrlBuilder from '@sanity/image-url'
 
 
-
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source)
+}
 
 export default function About() {
   const [authorData, setAuthorData] = useState(null);
@@ -48,44 +52,44 @@ export default function About() {
 
   return (
     <>
-      <main className=' pt-10 md:pt-36  min-h-[100vh] dark:bg-gray-900 dark:text-gray-100 '>
+      <main className=' pt-10 md:pt-20  min-h-[100vh] dark:bg-gray-900 dark:text-gray-100 '>
         <div className='max-w-4xl   mx-auto grid grid-cols-1 md:grid-cols-2 items-center justify-center gap-10 '>
           <div className=' flex gap-0 '>
             <div className=' hidden md:flex ml-4 md:ml-0 md:mr-4  h-full    '>
               <ul className='block space-y-10  h-full  text-xl md:text-3xl  '>
                 <Link className='' to="https://www.facebook.com/udbern1">
-                  <AiFillFacebook className='text-[#039BE5] bg-slate-200 overflow-hidden  hover:shadow-md hover:shadow-[#039BE5] mb-2 ' />
+                  <AiFillFacebook className='text-[#039BE5] bg-slate-200 overflow-hidden  hover:shadow-md hover:shadow-[#039BE5] mb-2  hover:-translate-x-2 duration-500 ease-in-out' />
                 </Link>
                 <Link to="https://twitter.com/EdwinUduakabasi">
-                  <AiFillTwitterSquare className=' text-[#03A9F4] mb-2   bg-slate-200 overflow-hidden  hover:shadow-md hover:shadow-[#03A9F4]' />
+                  <AiFillTwitterSquare className=' text-[#03A9F4] mb-2   bg-slate-200 overflow-hidden  hover:shadow-md hover:shadow-[#03A9F4] hover:-translate-x-2 duration-500 ease-in-out' />
                 </Link>
                 <Link to="https://github.com/udbern">
-                  < FaSquareGithub className=' text-[#333] mb-2  bg-slate-200 overflow-hidden  hover:shadow-md hover:shadow-[#333]' />
+                  < FaSquareGithub className=' text-[#333] mb-2  bg-slate-200 overflow-hidden  hover:shadow-md hover:shadow-[#333] hover:-translate-x-2 duration-500 ease-in-out' />
                 </Link>
-                <Link to="">
-                  < FaSquareInstagram className='text-[#D81B60]  mb-2  bg-slate-200 overflow-hidden  hover:shadow-md hover:shadow-[#D81B60] ' />
+                <Link to="https://instagram.com/ub_edwin">
+                  < FaSquareInstagram className='text-[#D81B60]  mb-2  bg-slate-200 overflow-hidden  hover:shadow-md hover:shadow-[#D81B60] hover:-translate-x-2 duration-500 ease-in-out ' />
                 </Link>
                 <Link to="https://wa.me/2349012675868">
-                  < FaWhatsappSquare className='text-[#40C351]   bg-slate-200 overflow-hidden  hover:shadow-md hover:shadow-[#40C351] ' />
+                  < FaWhatsappSquare className='text-[#40C351]   bg-slate-200 overflow-hidden  hover:shadow-md hover:shadow-[#40C351] hover:-translate-x-2 duration-500 ease-in-out ' />
                 </Link>
               </ul>
             </div> 
-            <div className='h-96 w-96 flex max-w-4xl mx-auto md:mx-0 rounded-lg overflow-hidden shadow-lg shadow-gray-950 bg-gray-700 p-2 dark:shadow-gray-300 '>
+            <div className='h-96 w-96 flex max-w-4xl mx-auto md:mx-0 rounded-lg overflow-hidden shadow shadow-gray-950 bg-gray-700 p-2 dark:shadow-gray-300 '>
               {authorData && (
                 <img
                   className='object-center object-cover w-full h-full'
-                  src={authorData.image.asset.url}
-                  alt='Author Image'
+                  src={urlFor(authorData.image.asset).url()}
+                  alt='Author Img'
                   loading="lazy"/>
               )}
             </div>
           </div>
           
           <div className='mx-5'>
-            <motion.h1 className='text-center md:text-left font-serif'
-              initial={{ x: 300, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 1.5 }}
+            <motion.h1 className='text-center md:text-left font-serif overflow-hidden p-2  max-w-lg shadow   dark:shadow-slate-100 mx-auto border '
+              initial={{  opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 2.5 }}
             >
               
               {authorData && authorData.bio.map((block) => (
@@ -94,7 +98,7 @@ export default function About() {
             </motion.h1>
             <div>
               <button
-                className="flex items-center gap-2 mt-3 justify-center max-w-4xl mx-auto md:mx-0 border py-2 px-3 bg-slate-700 text-white hover:bg-slate-800 transition-all duration-300 rounded-lg overflow-hidden"
+                className="flex items-center gap-2 mt-5 justify-center max-w-4xl mx-auto md:mx-0 border py-2 px-3 bg-slate-700 text-white hover:bg-slate-800 transition-all duration-300 rounded-lg overflow-hidden"
                 onClick={handleButtonClick}
               >
                 Download CV <span><HiDownload /></span>
@@ -117,7 +121,7 @@ export default function About() {
 
                 >
                   
-                  <img className=' h-12 dark:border-gray-300  border-2 border-black  rounded overflow-hidden' src={Css} alt="" />
+                  <img className=' h-12 dark:border-gray-300 hover:shadow  border-2 border-black  rounded overflow-hidden' src={Css} alt="" />
                   
                   <img className=' h-12 dark:border-gray-300 border-2 border-black  rounded overflow-hidden' src={Html} alt="" />
           

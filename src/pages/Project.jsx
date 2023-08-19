@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 import { LuExternalLink } from 'react-icons/lu';
 import { client } from "../lib/client";
+import imageUrlBuilder from '@sanity/image-url'
+
+const builder = imageUrlBuilder(client);
+function urlFor(source) {
+  return builder.image(source)
+}
+
 
 export default function Project() {
   const [projectData, setProjectData] = useState(null);
@@ -40,7 +47,7 @@ export default function Project() {
                 <div className='m-1 h-60 border-2 border-slate-700'>
                   <img
                     className='object-cover object-center h-full w-full hover:scale-95 duration-300 rounded overflow-hidden'
-                    src={project.mainImage.asset.url}
+                    src={urlFor(project.mainImage.asset).url()}
                     alt={project.mainImage.alt}
                     loading="lazy"/>
                 </div>
